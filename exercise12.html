@@ -1,57 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello World Boxes</title>
-  <style>
-    body {
-      background-color: #f0f0f0;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding-top: 50px;
+<meta charset="UTF-8">
+<title>Hello World Boxes</title>
+
+<style>
+    body{
+        background: #f1f1f1;
+        font-family: 'Times New Roman', serif;
+        font-size: 40px;
+        font-weight: bold;
+        padding: 40px;
     }
 
-    .box {
-      width: 400px;
-      margin: 20px auto;
-      padding: 15px;
-      font-size: 24px;
-      font-weight: bold;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    p{
+        margin: 0;
+        padding: 10px 20px;
     }
 
-    .box1 {
-      background-color: lightblue;
-      color: black;
-      border: 3px solid red;
+    .box1{
+        background: #b6d8e6;
+        border: 15px double red;
+        width: 90%;
+        margin: 20px auto;
     }
 
-    .box2 {
-      background-color: yellow;
-      color: green;
-      border: 3px solid blue;
-      border-radius: 10px;
+    .box2{
+        background: yellow;
+        border: 5px solid blue;
+        border-radius: 20px;
+        width: 90%;
+        margin: 20px auto;
     }
 
-    .box3 {
-      background-color: mediumseagreen;
-      color: darkgreen;
-      border: 5px dotted purple;
+    /* ✅ FIX BOX 3 EXACTLY LIKE TEMPLATE */
+    .box3{
+        background: #3CB371;
+        position: relative;
+        width: 90%;
+        margin: 20px auto;
+        padding: 0;
     }
 
-    .note {
-      color: red;
-      font-style: italic;
-      font-size: 18px;
+    .box3::before{
+        content: "";
+        position: absolute;
+        inset: 0;
+        border: 12px dotted gray;
+        box-sizing: border-box;
+        pointer-events: none;
     }
-  </style>
+
+    .box3 p{
+        color: black;
+        padding: 20px;
+        position: relative;
+        z-index: 1;
+        margin: 0;
+    }
+
+</style>
+
 </head>
 <body>
-  <div class="box box1">Hello World</div>
-  <div class="box box2">Hello World</div>
-  <div class="box box3">Hello World</div>
 
-  <p class="note">* Note colors, backgrounds and borders.</p>
+<div class="box1">
+  <p>Hello World</p>
+</div>
+
+<div class="box2">
+  <p>Hello World</p>
+</div>
+
+<div class="box3">
+  <p>Hello World</p>
+</div>
+
 </body>
 </html>
